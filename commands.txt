@@ -1,0 +1,19 @@
+$ cd libs
+$ mvn install:install-file -Dfile=$PWD/libwebsocket-1.0.jar -DgroupId=fr.bmartel.protocol.websocket -DartifactId=WebSocket -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true 
+$ cd ..
+
+Add entry to pom.xml:
+        <dependency>
+            <groupId>fr.bmartel.protocol.websocket</groupId>
+            <artifactId>WebSocket</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+$ mvn compile # This will create the target directory and place the class files
+$ ls target
+classes  generated-sources  maven-status
+
+$ mvn package # This generates the war file
+$ ls target
+AlexaWebSocket-1.0-SNAPSHOT  AlexaWebSocket-1.0-SNAPSHOT.war  AlexaWebSocket-1.0-SNAPSHOT.war.original  classes  generated-sources  maven-archiver  maven-status
+
