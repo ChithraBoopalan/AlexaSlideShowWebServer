@@ -33,4 +33,8 @@ public class AlexaWebSocketServer {
 
         server.start();
     }
+
+    public static void sendDataToClient() {
+
+    }
 }
