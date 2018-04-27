@@ -6,9 +6,9 @@ public class AlexaRequestModel {
 
     /**
      * version : 1.0
-     * session : {"new":true,"sessionId":"amzn1.echo-api.session.73e241bb-5d7a-4841-9b61-c79b5d41acc8","application":{"applicationId":"amzn1.ask.skill.37a77bc7-786f-4b49-80f2-171167038dee"},"user":{"userId":"amzn1.ask.account.AEOWSCTRNTXKEZC6LO777IOVE7BVYHYGQMXGJUTMGH7S2SEDXL6WMI7E6R5LAHMFSWMSCIOJLSI7H526IEB3C5HTMBUCSZ5VHJKTEKGVQQVXTQGCAFKUBMXT2EFHDI32MBHD6CATWP4YU47OUZIGYIH3T3LCMLI5AHHQTEY7M6KNUMMKYGCDSRLAWIF4NSQGQUNLOC54UA6TLHI"}}
-     * context : {"AudioPlayer":{"playerActivity":"IDLE"},"Display":{},"System":{"application":{"applicationId":"amzn1.ask.skill.37a77bc7-786f-4b49-80f2-171167038dee"},"user":{"userId":"amzn1.ask.account.AEOWSCTRNTXKEZC6LO777IOVE7BVYHYGQMXGJUTMGH7S2SEDXL6WMI7E6R5LAHMFSWMSCIOJLSI7H526IEB3C5HTMBUCSZ5VHJKTEKGVQQVXTQGCAFKUBMXT2EFHDI32MBHD6CATWP4YU47OUZIGYIH3T3LCMLI5AHHQTEY7M6KNUMMKYGCDSRLAWIF4NSQGQUNLOC54UA6TLHI"},"device":{"deviceId":"amzn1.ask.device.AEQALIIJQS4QVW62PGAXXFBLNIZQFGCOBY4QJGJER6ALKPFCGKHO3CXOJ7HCDL73JR6GIARXIJXUK5SK6K7PCSDEGXQCYBJX7QTRLE2C6SAESKKXZXUKXFVNQHPNRXY7RMCEW3Z5JADGXIMRF35J3LZ6URHA","supportedInterfaces":{"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}},"apiEndpoint":"https://api.amazonalexa.com","apiAccessToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjM3YTc3YmM3LTc4NmYtNGI0OS04MGYyLTE3MTE2NzAzOGRlZSIsImV4cCI6MTUyMzY0MDkyMiwiaWF0IjoxNTIzNjM3MzIyLCJuYmYiOjE1MjM2MzczMjIsInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUVRQUxJSUpRUzRRVlc2MlBHQVhYRkJMTklaUUZHQ09CWTRRSkdKRVI2QUxLUEZDR0tITzNDWE9KN0hDREw3M0pSNkdJQVJYSUpYVUs1U0s2SzdQQ1NERUdYUUNZQkpYN1FUUkxFMkM2U0FFU0tLWFpYVUtYRlZOUUhQTlJYWTdSTUNFVzNaNUpBREdYSU1SRjM1SjNMWjZVUkhBIiwidXNlcklkIjoiYW16bjEuYXNrLmFjY291bnQuQUVPV1NDVFJOVFhLRVpDNkxPNzc3SU9WRTdCVllIWUdRTVhHSlVUTUdIN1MyU0VEWEw2V01JN0U2UjVMQUhNRlNXTVNDSU9KTFNJN0g1MjZJRUIzQzVIVE1CVUNTWjVWSEpLVEVLR1ZRUVZYVFFHQ0FGS1VCTVhUMkVGSERJMzJNQkhENkNBVFdQNFlVNDdPVVpJR1lJSDNUM0xDTUxJNUFISFFURVk3TTZLTlVNTUtZR0NEU1JMQVdJRjROU1FHUVVOTE9DNTRVQTZUTEhJIn19.dL8SHayYyfHDDoW95WDRGOqPf_jplaZJa3P20y2-zgtulBlcC1TdF8swnBwPA_VBBFCBU_HtJ3yTkzeb4SD1XNoxdo8Ne_B6CE0gf687ZhuMSyJHenFP5vIWcNK1MfewJYFSUs_GE1DsAo5Z3nMkw2xNhr56hIQFTroOL1P5KCjeggDYzTf1VUV7d7eMqIoANBdbqWa6n_0fZuDgdjT227aFvHxxqHOrPQW5ozaTQHu8D0G3akipm8g8BT3jdXKNqePO63zzcRy_0SW3hx7BDnOZqxHqXx2Qeg_xII6uT-Us5uqjsG8BCfY-2OBFo5ohLUaPO6SpjYNX11eyMhjN1w"}}
-     * request : {"type":"IntentRequest","requestId":"amzn1.echo-api.request.3a52c591-d0a7-4f08-9897-f35d7c31f6a2","timestamp":"2018-04-13T16:35:22Z","locale":"en-IN","intent":{"name":"ListOpenAssignedIssues","confirmationStatus":"NONE"}}
+     * session : {"new":false,"sessionId":"amzn1.echo-api.session.32383308-9076-486b-868f-78d781ed8d20","application":{"applicationId":"amzn1.ask.skill.37a77bc7-786f-4b49-80f2-171167038dee"},"user":{"userId":"amzn1.ask.account.AHEII2SQZ7K6LVGXAZZLDGIZN7H4GEHJRAP6EDDOJDIYGHGDPXLTGDG32TMRYBZ4ONZ5JIOLDYCFT6PQ6NY6MQ42IZHZQTOPOUBWZNEZN7OZO6DBXOJ7F3M3R4RDY46AC2EO6YFZ6LXQVX3OIDDSFBEMBY5R7UYDBSWE3I4NA4RWMEV4LHRXXCENPW5UE7ZZ7YKRVQKFXBTFREQ"}}
+     * context : {"AudioPlayer":{"playerActivity":"IDLE"},"Display":{"token":""},"System":{"application":{"applicationId":"amzn1.ask.skill.37a77bc7-786f-4b49-80f2-171167038dee"},"user":{"userId":"amzn1.ask.account.AHEII2SQZ7K6LVGXAZZLDGIZN7H4GEHJRAP6EDDOJDIYGHGDPXLTGDG32TMRYBZ4ONZ5JIOLDYCFT6PQ6NY6MQ42IZHZQTOPOUBWZNEZN7OZO6DBXOJ7F3M3R4RDY46AC2EO6YFZ6LXQVX3OIDDSFBEMBY5R7UYDBSWE3I4NA4RWMEV4LHRXXCENPW5UE7ZZ7YKRVQKFXBTFREQ"},"device":{"deviceId":"amzn1.ask.device.AFFBJGOCHCEVUOZSXGLIH4TTIEFV4CLMGPQUH3TF7J3BCSJM5PIEQ74I74JWQ2ETNJL5ST5TDGPIV7HDBG6DISK4TDHVSGLKBCDBXZPAH5Y2W7PKMMDW623E33XSZO4SDOKV3ZAME72YBYGK2N3QJHSF2EIQ","supportedInterfaces":{"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}},"apiEndpoint":"https://api.amazonalexa.com","apiAccessToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjM3YTc3YmM3LTc4NmYtNGI0OS04MGYyLTE3MTE2NzAzOGRlZSIsImV4cCI6MTUyNDQxNzYwNSwiaWF0IjoxNTI0NDE0MDA1LCJuYmYiOjE1MjQ0MTQwMDUsInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUZGQkpHT0NIQ0VWVU9aU1hHTElINFRUSUVGVjRDTE1HUFFVSDNURjdKM0JDU0pNNVBJRVE3NEk3NEpXUTJFVE5KTDVTVDVUREdQSVY3SERCRzZESVNLNFRESFZTR0xLQkNEQlhaUEFINVkyVzdQS01NRFc2MjNFMzNYU1pPNFNET0tWM1pBTUU3MllCWUdLMk4zUUpIU0YyRUlRIiwidXNlcklkIjoiYW16bjEuYXNrLmFjY291bnQuQUhFSUkyU1FaN0s2TFZHWEFaWkxER0laTjdINEdFSEpSQVA2RURET0pESVlHSEdEUFhMVEdERzMyVE1SWUJaNE9OWjVKSU9MRFlDRlQ2UFE2Tlk2TVE0MklaSFpRVE9QT1VCV1pORVpON09aTzZEQlhPSjdGM00zUjRSRFk0NkFDMkVPNllGWjZMWFFWWDNPSUREU0ZCRU1CWTVSN1VZREJTV0UzSTROQTRSV01FVjRMSFJYWENFTlBXNVVFN1paN1lLUlZRS0ZYQlRGUkVRIn19.CasjAhStMhwksogFXA64BaXMA4E2FIFT0ZSiHsod2cD9Ocr7W-5t4gWzThAIcHYYPzHJWIW-aYgdlUEP_0iLyzrgiNR6ou3pPhrBt6P4aIz2Q4FQHYuuIx6Qe7SmgSRrXG0jerUDjIHGPcD2nQ6zk1j5m1r3keq4UTYUTj5Bwj54nm6jIq1T1fMbnReKCkZGLp2ekY1hRwFBu-Wh5b2PpRrEXtAIec8jzJ-D121PTdTdLsJSQOTMhnIpVUgD7oXKYiFGQUKMwZDlZIs4AHAsTmI4HlaShWghj-wBMbnyoxXMotSuwrd2ZyNZbHozut2mefRhTD6v0Xa_TvCTuOo_og"}}
+     * request : {"type":"IntentRequest","requestId":"amzn1.echo-api.request.9b9aa627-2f66-4729-acf4-a6dc0d6af4a8","timestamp":"2018-04-22T16:20:05Z","locale":"en-IN","intent":{"name":"GoToSlide","confirmationStatus":"NONE","slots":{"number":{"name":"number","value":"4","confirmationStatus":"NONE"},"Search":{"name":"Search","value":"hello","confirmationStatus":"NONE"}}},"dialogState":"STARTED"}
      */
 
     private String version;
@@ -50,10 +50,10 @@ public class AlexaRequestModel {
 
     public static class SessionBean {
         /**
-         * new : true
-         * sessionId : amzn1.echo-api.session.73e241bb-5d7a-4841-9b61-c79b5d41acc8
+         * new : false
+         * sessionId : amzn1.echo-api.session.32383308-9076-486b-868f-78d781ed8d20
          * application : {"applicationId":"amzn1.ask.skill.37a77bc7-786f-4b49-80f2-171167038dee"}
-         * user : {"userId":"amzn1.ask.account.AEOWSCTRNTXKEZC6LO777IOVE7BVYHYGQMXGJUTMGH7S2SEDXL6WMI7E6R5LAHMFSWMSCIOJLSI7H526IEB3C5HTMBUCSZ5VHJKTEKGVQQVXTQGCAFKUBMXT2EFHDI32MBHD6CATWP4YU47OUZIGYIH3T3LCMLI5AHHQTEY7M6KNUMMKYGCDSRLAWIF4NSQGQUNLOC54UA6TLHI"}
+         * user : {"userId":"amzn1.ask.account.AHEII2SQZ7K6LVGXAZZLDGIZN7H4GEHJRAP6EDDOJDIYGHGDPXLTGDG32TMRYBZ4ONZ5JIOLDYCFT6PQ6NY6MQ42IZHZQTOPOUBWZNEZN7OZO6DBXOJ7F3M3R4RDY46AC2EO6YFZ6LXQVX3OIDDSFBEMBY5R7UYDBSWE3I4NA4RWMEV4LHRXXCENPW5UE7ZZ7YKRVQKFXBTFREQ"}
          */
 
         @SerializedName("new")
@@ -112,7 +112,7 @@ public class AlexaRequestModel {
 
         public static class UserBean {
             /**
-             * userId : amzn1.ask.account.AEOWSCTRNTXKEZC6LO777IOVE7BVYHYGQMXGJUTMGH7S2SEDXL6WMI7E6R5LAHMFSWMSCIOJLSI7H526IEB3C5HTMBUCSZ5VHJKTEKGVQQVXTQGCAFKUBMXT2EFHDI32MBHD6CATWP4YU47OUZIGYIH3T3LCMLI5AHHQTEY7M6KNUMMKYGCDSRLAWIF4NSQGQUNLOC54UA6TLHI
+             * userId : amzn1.ask.account.AHEII2SQZ7K6LVGXAZZLDGIZN7H4GEHJRAP6EDDOJDIYGHGDPXLTGDG32TMRYBZ4ONZ5JIOLDYCFT6PQ6NY6MQ42IZHZQTOPOUBWZNEZN7OZO6DBXOJ7F3M3R4RDY46AC2EO6YFZ6LXQVX3OIDDSFBEMBY5R7UYDBSWE3I4NA4RWMEV4LHRXXCENPW5UE7ZZ7YKRVQKFXBTFREQ
              */
 
             private String userId;
@@ -130,8 +130,8 @@ public class AlexaRequestModel {
     public static class ContextBean {
         /**
          * AudioPlayer : {"playerActivity":"IDLE"}
-         * Display : {}
-         * System : {"application":{"applicationId":"amzn1.ask.skill.37a77bc7-786f-4b49-80f2-171167038dee"},"user":{"userId":"amzn1.ask.account.AEOWSCTRNTXKEZC6LO777IOVE7BVYHYGQMXGJUTMGH7S2SEDXL6WMI7E6R5LAHMFSWMSCIOJLSI7H526IEB3C5HTMBUCSZ5VHJKTEKGVQQVXTQGCAFKUBMXT2EFHDI32MBHD6CATWP4YU47OUZIGYIH3T3LCMLI5AHHQTEY7M6KNUMMKYGCDSRLAWIF4NSQGQUNLOC54UA6TLHI"},"device":{"deviceId":"amzn1.ask.device.AEQALIIJQS4QVW62PGAXXFBLNIZQFGCOBY4QJGJER6ALKPFCGKHO3CXOJ7HCDL73JR6GIARXIJXUK5SK6K7PCSDEGXQCYBJX7QTRLE2C6SAESKKXZXUKXFVNQHPNRXY7RMCEW3Z5JADGXIMRF35J3LZ6URHA","supportedInterfaces":{"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}},"apiEndpoint":"https://api.amazonalexa.com","apiAccessToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjM3YTc3YmM3LTc4NmYtNGI0OS04MGYyLTE3MTE2NzAzOGRlZSIsImV4cCI6MTUyMzY0MDkyMiwiaWF0IjoxNTIzNjM3MzIyLCJuYmYiOjE1MjM2MzczMjIsInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUVRQUxJSUpRUzRRVlc2MlBHQVhYRkJMTklaUUZHQ09CWTRRSkdKRVI2QUxLUEZDR0tITzNDWE9KN0hDREw3M0pSNkdJQVJYSUpYVUs1U0s2SzdQQ1NERUdYUUNZQkpYN1FUUkxFMkM2U0FFU0tLWFpYVUtYRlZOUUhQTlJYWTdSTUNFVzNaNUpBREdYSU1SRjM1SjNMWjZVUkhBIiwidXNlcklkIjoiYW16bjEuYXNrLmFjY291bnQuQUVPV1NDVFJOVFhLRVpDNkxPNzc3SU9WRTdCVllIWUdRTVhHSlVUTUdIN1MyU0VEWEw2V01JN0U2UjVMQUhNRlNXTVNDSU9KTFNJN0g1MjZJRUIzQzVIVE1CVUNTWjVWSEpLVEVLR1ZRUVZYVFFHQ0FGS1VCTVhUMkVGSERJMzJNQkhENkNBVFdQNFlVNDdPVVpJR1lJSDNUM0xDTUxJNUFISFFURVk3TTZLTlVNTUtZR0NEU1JMQVdJRjROU1FHUVVOTE9DNTRVQTZUTEhJIn19.dL8SHayYyfHDDoW95WDRGOqPf_jplaZJa3P20y2-zgtulBlcC1TdF8swnBwPA_VBBFCBU_HtJ3yTkzeb4SD1XNoxdo8Ne_B6CE0gf687ZhuMSyJHenFP5vIWcNK1MfewJYFSUs_GE1DsAo5Z3nMkw2xNhr56hIQFTroOL1P5KCjeggDYzTf1VUV7d7eMqIoANBdbqWa6n_0fZuDgdjT227aFvHxxqHOrPQW5ozaTQHu8D0G3akipm8g8BT3jdXKNqePO63zzcRy_0SW3hx7BDnOZqxHqXx2Qeg_xII6uT-Us5uqjsG8BCfY-2OBFo5ohLUaPO6SpjYNX11eyMhjN1w"}
+         * Display : {"token":""}
+         * System : {"application":{"applicationId":"amzn1.ask.skill.37a77bc7-786f-4b49-80f2-171167038dee"},"user":{"userId":"amzn1.ask.account.AHEII2SQZ7K6LVGXAZZLDGIZN7H4GEHJRAP6EDDOJDIYGHGDPXLTGDG32TMRYBZ4ONZ5JIOLDYCFT6PQ6NY6MQ42IZHZQTOPOUBWZNEZN7OZO6DBXOJ7F3M3R4RDY46AC2EO6YFZ6LXQVX3OIDDSFBEMBY5R7UYDBSWE3I4NA4RWMEV4LHRXXCENPW5UE7ZZ7YKRVQKFXBTFREQ"},"device":{"deviceId":"amzn1.ask.device.AFFBJGOCHCEVUOZSXGLIH4TTIEFV4CLMGPQUH3TF7J3BCSJM5PIEQ74I74JWQ2ETNJL5ST5TDGPIV7HDBG6DISK4TDHVSGLKBCDBXZPAH5Y2W7PKMMDW623E33XSZO4SDOKV3ZAME72YBYGK2N3QJHSF2EIQ","supportedInterfaces":{"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}},"apiEndpoint":"https://api.amazonalexa.com","apiAccessToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjM3YTc3YmM3LTc4NmYtNGI0OS04MGYyLTE3MTE2NzAzOGRlZSIsImV4cCI6MTUyNDQxNzYwNSwiaWF0IjoxNTI0NDE0MDA1LCJuYmYiOjE1MjQ0MTQwMDUsInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUZGQkpHT0NIQ0VWVU9aU1hHTElINFRUSUVGVjRDTE1HUFFVSDNURjdKM0JDU0pNNVBJRVE3NEk3NEpXUTJFVE5KTDVTVDVUREdQSVY3SERCRzZESVNLNFRESFZTR0xLQkNEQlhaUEFINVkyVzdQS01NRFc2MjNFMzNYU1pPNFNET0tWM1pBTUU3MllCWUdLMk4zUUpIU0YyRUlRIiwidXNlcklkIjoiYW16bjEuYXNrLmFjY291bnQuQUhFSUkyU1FaN0s2TFZHWEFaWkxER0laTjdINEdFSEpSQVA2RURET0pESVlHSEdEUFhMVEdERzMyVE1SWUJaNE9OWjVKSU9MRFlDRlQ2UFE2Tlk2TVE0MklaSFpRVE9QT1VCV1pORVpON09aTzZEQlhPSjdGM00zUjRSRFk0NkFDMkVPNllGWjZMWFFWWDNPSUREU0ZCRU1CWTVSN1VZREJTV0UzSTROQTRSV01FVjRMSFJYWENFTlBXNVVFN1paN1lLUlZRS0ZYQlRGUkVRIn19.CasjAhStMhwksogFXA64BaXMA4E2FIFT0ZSiHsod2cD9Ocr7W-5t4gWzThAIcHYYPzHJWIW-aYgdlUEP_0iLyzrgiNR6ou3pPhrBt6P4aIz2Q4FQHYuuIx6Qe7SmgSRrXG0jerUDjIHGPcD2nQ6zk1j5m1r3keq4UTYUTj5Bwj54nm6jIq1T1fMbnReKCkZGLp2ekY1hRwFBu-Wh5b2PpRrEXtAIec8jzJ-D121PTdTdLsJSQOTMhnIpVUgD7oXKYiFGQUKMwZDlZIs4AHAsTmI4HlaShWghj-wBMbnyoxXMotSuwrd2ZyNZbHozut2mefRhTD6v0Xa_TvCTuOo_og"}
          */
 
         private AudioPlayerBean AudioPlayer;
@@ -163,18 +163,44 @@ public class AlexaRequestModel {
         }
 
         public static class AudioPlayerBean {
+            /**
+             * playerActivity : IDLE
+             */
+
+            private String playerActivity;
+
+            public String getPlayerActivity() {
+                return playerActivity;
+            }
+
+            public void setPlayerActivity(String playerActivity) {
+                this.playerActivity = playerActivity;
+            }
         }
 
         public static class DisplayBean {
+            /**
+             * token :
+             */
+
+            private String token;
+
+            public String getToken() {
+                return token;
+            }
+
+            public void setToken(String token) {
+                this.token = token;
+            }
         }
 
         public static class SystemBean {
             /**
              * application : {"applicationId":"amzn1.ask.skill.37a77bc7-786f-4b49-80f2-171167038dee"}
-             * user : {"userId":"amzn1.ask.account.AEOWSCTRNTXKEZC6LO777IOVE7BVYHYGQMXGJUTMGH7S2SEDXL6WMI7E6R5LAHMFSWMSCIOJLSI7H526IEB3C5HTMBUCSZ5VHJKTEKGVQQVXTQGCAFKUBMXT2EFHDI32MBHD6CATWP4YU47OUZIGYIH3T3LCMLI5AHHQTEY7M6KNUMMKYGCDSRLAWIF4NSQGQUNLOC54UA6TLHI"}
-             * device : {"deviceId":"amzn1.ask.device.AEQALIIJQS4QVW62PGAXXFBLNIZQFGCOBY4QJGJER6ALKPFCGKHO3CXOJ7HCDL73JR6GIARXIJXUK5SK6K7PCSDEGXQCYBJX7QTRLE2C6SAESKKXZXUKXFVNQHPNRXY7RMCEW3Z5JADGXIMRF35J3LZ6URHA","supportedInterfaces":{"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}}
+             * user : {"userId":"amzn1.ask.account.AHEII2SQZ7K6LVGXAZZLDGIZN7H4GEHJRAP6EDDOJDIYGHGDPXLTGDG32TMRYBZ4ONZ5JIOLDYCFT6PQ6NY6MQ42IZHZQTOPOUBWZNEZN7OZO6DBXOJ7F3M3R4RDY46AC2EO6YFZ6LXQVX3OIDDSFBEMBY5R7UYDBSWE3I4NA4RWMEV4LHRXXCENPW5UE7ZZ7YKRVQKFXBTFREQ"}
+             * device : {"deviceId":"amzn1.ask.device.AFFBJGOCHCEVUOZSXGLIH4TTIEFV4CLMGPQUH3TF7J3BCSJM5PIEQ74I74JWQ2ETNJL5ST5TDGPIV7HDBG6DISK4TDHVSGLKBCDBXZPAH5Y2W7PKMMDW623E33XSZO4SDOKV3ZAME72YBYGK2N3QJHSF2EIQ","supportedInterfaces":{"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}}
              * apiEndpoint : https://api.amazonalexa.com
-             * apiAccessToken : eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjM3YTc3YmM3LTc4NmYtNGI0OS04MGYyLTE3MTE2NzAzOGRlZSIsImV4cCI6MTUyMzY0MDkyMiwiaWF0IjoxNTIzNjM3MzIyLCJuYmYiOjE1MjM2MzczMjIsInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUVRQUxJSUpRUzRRVlc2MlBHQVhYRkJMTklaUUZHQ09CWTRRSkdKRVI2QUxLUEZDR0tITzNDWE9KN0hDREw3M0pSNkdJQVJYSUpYVUs1U0s2SzdQQ1NERUdYUUNZQkpYN1FUUkxFMkM2U0FFU0tLWFpYVUtYRlZOUUhQTlJYWTdSTUNFVzNaNUpBREdYSU1SRjM1SjNMWjZVUkhBIiwidXNlcklkIjoiYW16bjEuYXNrLmFjY291bnQuQUVPV1NDVFJOVFhLRVpDNkxPNzc3SU9WRTdCVllIWUdRTVhHSlVUTUdIN1MyU0VEWEw2V01JN0U2UjVMQUhNRlNXTVNDSU9KTFNJN0g1MjZJRUIzQzVIVE1CVUNTWjVWSEpLVEVLR1ZRUVZYVFFHQ0FGS1VCTVhUMkVGSERJMzJNQkhENkNBVFdQNFlVNDdPVVpJR1lJSDNUM0xDTUxJNUFISFFURVk3TTZLTlVNTUtZR0NEU1JMQVdJRjROU1FHUVVOTE9DNTRVQTZUTEhJIn19.dL8SHayYyfHDDoW95WDRGOqPf_jplaZJa3P20y2-zgtulBlcC1TdF8swnBwPA_VBBFCBU_HtJ3yTkzeb4SD1XNoxdo8Ne_B6CE0gf687ZhuMSyJHenFP5vIWcNK1MfewJYFSUs_GE1DsAo5Z3nMkw2xNhr56hIQFTroOL1P5KCjeggDYzTf1VUV7d7eMqIoANBdbqWa6n_0fZuDgdjT227aFvHxxqHOrPQW5ozaTQHu8D0G3akipm8g8BT3jdXKNqePO63zzcRy_0SW3hx7BDnOZqxHqXx2Qeg_xII6uT-Us5uqjsG8BCfY-2OBFo5ohLUaPO6SpjYNX11eyMhjN1w
+             * apiAccessToken : eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjM3YTc3YmM3LTc4NmYtNGI0OS04MGYyLTE3MTE2NzAzOGRlZSIsImV4cCI6MTUyNDQxNzYwNSwiaWF0IjoxNTI0NDE0MDA1LCJuYmYiOjE1MjQ0MTQwMDUsInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUZGQkpHT0NIQ0VWVU9aU1hHTElINFRUSUVGVjRDTE1HUFFVSDNURjdKM0JDU0pNNVBJRVE3NEk3NEpXUTJFVE5KTDVTVDVUREdQSVY3SERCRzZESVNLNFRESFZTR0xLQkNEQlhaUEFINVkyVzdQS01NRFc2MjNFMzNYU1pPNFNET0tWM1pBTUU3MllCWUdLMk4zUUpIU0YyRUlRIiwidXNlcklkIjoiYW16bjEuYXNrLmFjY291bnQuQUhFSUkyU1FaN0s2TFZHWEFaWkxER0laTjdINEdFSEpSQVA2RURET0pESVlHSEdEUFhMVEdERzMyVE1SWUJaNE9OWjVKSU9MRFlDRlQ2UFE2Tlk2TVE0MklaSFpRVE9QT1VCV1pORVpON09aTzZEQlhPSjdGM00zUjRSRFk0NkFDMkVPNllGWjZMWFFWWDNPSUREU0ZCRU1CWTVSN1VZREJTV0UzSTROQTRSV01FVjRMSFJYWENFTlBXNVVFN1paN1lLUlZRS0ZYQlRGUkVRIn19.CasjAhStMhwksogFXA64BaXMA4E2FIFT0ZSiHsod2cD9Ocr7W-5t4gWzThAIcHYYPzHJWIW-aYgdlUEP_0iLyzrgiNR6ou3pPhrBt6P4aIz2Q4FQHYuuIx6Qe7SmgSRrXG0jerUDjIHGPcD2nQ6zk1j5m1r3keq4UTYUTj5Bwj54nm6jIq1T1fMbnReKCkZGLp2ekY1hRwFBu-Wh5b2PpRrEXtAIec8jzJ-D121PTdTdLsJSQOTMhnIpVUgD7oXKYiFGQUKMwZDlZIs4AHAsTmI4HlaShWghj-wBMbnyoxXMotSuwrd2ZyNZbHozut2mefRhTD6v0Xa_TvCTuOo_og
              */
 
             private ApplicationBeanX application;
@@ -241,7 +267,7 @@ public class AlexaRequestModel {
 
             public static class UserBeanX {
                 /**
-                 * userId : amzn1.ask.account.AEOWSCTRNTXKEZC6LO777IOVE7BVYHYGQMXGJUTMGH7S2SEDXL6WMI7E6R5LAHMFSWMSCIOJLSI7H526IEB3C5HTMBUCSZ5VHJKTEKGVQQVXTQGCAFKUBMXT2EFHDI32MBHD6CATWP4YU47OUZIGYIH3T3LCMLI5AHHQTEY7M6KNUMMKYGCDSRLAWIF4NSQGQUNLOC54UA6TLHI
+                 * userId : amzn1.ask.account.AHEII2SQZ7K6LVGXAZZLDGIZN7H4GEHJRAP6EDDOJDIYGHGDPXLTGDG32TMRYBZ4ONZ5JIOLDYCFT6PQ6NY6MQ42IZHZQTOPOUBWZNEZN7OZO6DBXOJ7F3M3R4RDY46AC2EO6YFZ6LXQVX3OIDDSFBEMBY5R7UYDBSWE3I4NA4RWMEV4LHRXXCENPW5UE7ZZ7YKRVQKFXBTFREQ
                  */
 
                 private String userId;
@@ -257,7 +283,7 @@ public class AlexaRequestModel {
 
             public static class DeviceBean {
                 /**
-                 * deviceId : amzn1.ask.device.AEQALIIJQS4QVW62PGAXXFBLNIZQFGCOBY4QJGJER6ALKPFCGKHO3CXOJ7HCDL73JR6GIARXIJXUK5SK6K7PCSDEGXQCYBJX7QTRLE2C6SAESKKXZXUKXFVNQHPNRXY7RMCEW3Z5JADGXIMRF35J3LZ6URHA
+                 * deviceId : amzn1.ask.device.AFFBJGOCHCEVUOZSXGLIH4TTIEFV4CLMGPQUH3TF7J3BCSJM5PIEQ74I74JWQ2ETNJL5ST5TDGPIV7HDBG6DISK4TDHVSGLKBCDBXZPAH5Y2W7PKMMDW623E33XSZO4SDOKV3ZAME72YBYGK2N3QJHSF2EIQ
                  * supportedInterfaces : {"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}
                  */
 
@@ -341,10 +367,11 @@ public class AlexaRequestModel {
     public static class RequestBean {
         /**
          * type : IntentRequest
-         * requestId : amzn1.echo-api.request.3a52c591-d0a7-4f08-9897-f35d7c31f6a2
-         * timestamp : 2018-04-13T16:35:22Z
+         * requestId : amzn1.echo-api.request.9b9aa627-2f66-4729-acf4-a6dc0d6af4a8
+         * timestamp : 2018-04-22T16:20:05Z
          * locale : en-IN
-         * intent : {"name":"ListOpenAssignedIssues","confirmationStatus":"NONE"}
+         * intent : {"name":"GoToSlide","confirmationStatus":"NONE","slots":{"number":{"name":"number","value":"4","confirmationStatus":"NONE"},"Search":{"name":"Search","value":"hello","confirmationStatus":"NONE"}}}
+         * dialogState : STARTED
          */
 
         private String type;
@@ -352,6 +379,7 @@ public class AlexaRequestModel {
         private String timestamp;
         private String locale;
         private IntentBean intent;
+        private String dialogState;
 
         public String getType() {
             return type;
@@ -393,14 +421,24 @@ public class AlexaRequestModel {
             this.intent = intent;
         }
 
+        public String getDialogState() {
+            return dialogState;
+        }
+
+        public void setDialogState(String dialogState) {
+            this.dialogState = dialogState;
+        }
+
         public static class IntentBean {
             /**
-             * name : ListOpenAssignedIssues
+             * name : GoToSlide
              * confirmationStatus : NONE
+             * slots : {"number":{"name":"number","value":"4","confirmationStatus":"NONE"},"Search":{"name":"Search","value":"hello","confirmationStatus":"NONE"}}
              */
 
             private String name;
             private String confirmationStatus;
+            private SlotsBean slots;
 
             public String getName() {
                 return name;
@@ -416,6 +454,112 @@ public class AlexaRequestModel {
 
             public void setConfirmationStatus(String confirmationStatus) {
                 this.confirmationStatus = confirmationStatus;
+            }
+
+            public SlotsBean getSlots() {
+                return slots;
+            }
+
+            public void setSlots(SlotsBean slots) {
+                this.slots = slots;
+            }
+
+            public static class SlotsBean {
+                /**
+                 * number : {"name":"number","value":"4","confirmationStatus":"NONE"}
+                 * Search : {"name":"Search","value":"hello","confirmationStatus":"NONE"}
+                 */
+
+                private NumberBean number;
+                private SearchBean Search;
+
+                public NumberBean getNumber() {
+                    return number;
+                }
+
+                public void setNumber(NumberBean number) {
+                    this.number = number;
+                }
+
+                public SearchBean getSearch() {
+                    return Search;
+                }
+
+                public void setSearch(SearchBean Search) {
+                    this.Search = Search;
+                }
+
+                public static class NumberBean {
+                    /**
+                     * name : number
+                     * value : 4
+                     * confirmationStatus : NONE
+                     */
+
+                    private String name;
+                    private String value;
+                    private String confirmationStatus;
+
+                    public String getName() {
+                        return name;
+                    }
+
+                    public void setName(String name) {
+                        this.name = name;
+                    }
+
+                    public String getValue() {
+                        return value;
+                    }
+
+                    public void setValue(String value) {
+                        this.value = value;
+                    }
+
+                    public String getConfirmationStatus() {
+                        return confirmationStatus;
+                    }
+
+                    public void setConfirmationStatus(String confirmationStatus) {
+                        this.confirmationStatus = confirmationStatus;
+                    }
+                }
+
+                public static class SearchBean {
+                    /**
+                     * name : Search
+                     * value : hello
+                     * confirmationStatus : NONE
+                     */
+
+                    private String name;
+                    private String value;
+                    private String confirmationStatus;
+
+                    public String getName() {
+                        return name;
+                    }
+
+                    public void setName(String name) {
+                        this.name = name;
+                    }
+
+                    public String getValue() {
+                        return value;
+                    }
+
+                    public void setValue(String value) {
+                        this.value = value;
+                    }
+
+                    public String getConfirmationStatus() {
+                        return confirmationStatus;
+                    }
+
+                    public void setConfirmationStatus(String confirmationStatus) {
+                        this.confirmationStatus = confirmationStatus;
+                    }
+                }
             }
         }
     }
