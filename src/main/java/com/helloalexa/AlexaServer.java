@@ -1,35 +1,129 @@
 package com.helloalexa;
 
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.InputStream;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 @RestController
 public class AlexaServer {
+    private final static String LAUNCH_REQUEST = "LaunchRequest";
 
+    // Built-in Intents
+    private final static String STOP_INTENT = "AMAZON.StopIntent";
+    private final static String CANCEL_INTENT = "AMAZON.CancelIntent";
+    private final static String HELP_INTENT = "AMAZON.HelpIntent";
+
+    private final static String START_SLIDE = "StartSlide";
     private final static String NEXT_SLIDE = "NextSlide";
     private final static String PREVIOUS_SLIDE = "PreviousSlide";
     private final static String GO_TO_SLIDE = "GoToSlide";
+    private final static String SEARCH_SLIDE = "SearchSlide";
+    private final static String MARK_SLIDE = "MarkSlide";
+    private final static String MARKED_SLIDE = "MarkedSlide";
+
+    private static final String HELP_SSML =
+            "<speak>" +
+            "    <p>" +
+            "        Welcome to Slide Show! This skill will help you control your reveal dot <say-as interpret-as=\"spell-out\">JS</say-as> slideshows with voice commands." +
+            "    </p>" +
+            "    <p>" +
+            "        To use this skill, first install the Alexa Slide Show extension on Google Chrome. Then open a reveal dot <say-as interpret-as=\"spell-out\">JS</say-as> slideshow in the browser and click on the extension's icon. You'll then be shown instructions to connect your slideshow to your Alexa device." +
+            "    </p>" +
+            "    <p>" +
+            "        <s>" +
+            "            Once connected, you can use voice commands such as" +
+            "            <break strength=\"medium\" />next slide<break strength=\"medium\"/> and" +
+            "            <break strength=\"medium\" />previous slide<break strength=\"medium\"/> to go to the next and previous slides." +
+            "        </s>" +
+            "" +
+            "        <s>To open a slide by slide number, use phrases such as <break strength=\"medium\" />go to slide five<break strength=\"medium\"/>.</s>" +
+            "" +
+            "        <s>It's easy to mark a slide to come back to later.</s>" +
+            "        <s>Say <break strength=\"medium\" />mark current slide<break strength=\"medium\"/> to mark a slide, and later say <break strength=\"medium\" />marked slide<break strength=\"medium\"/> to go to the marked slide.</s>" +
+            "" +
+            "        <s>You can also go to a slide by a search string.</s><s>For example, say <break strength=\"medium\" />search planet earth<break strength=\"medium\"/> to go to the slide containing the phrase \"planet earth\".</s>" +
+            "    </p>" +
+            "" +
+            "    Hope you enjoy this skill!" +
+            "</speak>";
+
+    private ConcurrentMap<String, Integer> mapToConnectionId = new ConcurrentHashMap<>();
 
     @RequestMapping(value = "/alexa",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public String alexa(InputStream input) {
+    public String processAlexaInput(InputStream input) {
         AlexaRequestModel alexaInput = AlexaRequestParser.parseAlexaRequest(input);
-        if (alexaInput.getRequest().getType().equals("IntentRequest")) {
-            if (alexaInput.getRequest().getIntent().getName().equals(NEXT_SLIDE)) {
-                return "{\"version\": \"1.0\",\"response\": {\"outputSpeech\": {\"type\": \"PlainText\",\"text\": \"Here is your next slide\"},\"shouldEndSession\": true }}";
+
+        if (alexaInput.getRequest().getType().equals(LAUNCH_REQUEST)) {
+            return "{\"version\": \"1.0\",\"response\": {\"outputSpeech\": {\"type\": \"PlainText\",\"text\": \"Hello if you would like to start a new presentation, please say start slide and the unique code\"},\"shouldEndSession\": true }}";
+        } else if (alexaInput.getRequest().getType().equals("IntentRequest")) {
+            if (alexaInput.getRequest().getIntent().getName().equals(START_SLIDE)) {
+                mapToConnectionId.put(getDeviceId(alexaInput), getSlotValue(alexaInput));
+                SlideShowRequest request = new SlideShowRequest();
+                request.setAction("dismissDialog");
+                AlexaWebSocketServer.getInstance().sendDataToClient(mapToConnectionId.get(getDeviceId(alexaInput)), request);
+                return "{\"version\": \"1.0\",\"response\": {\"outputSpeech\": {\"type\": \"PlainText\",\"text\": \"All done, I'm ready with your slides\"},\"shouldEndSession\": true }}";
+            } else if (alexaInput.getRequest().getIntent().getName().equals(NEXT_SLIDE)) {
+                SlideShowRequest request = new SlideShowRequest();
+                request.setAction("next");
+                AlexaWebSocketServer.getInstance().sendDataToClient(mapToConnectionId.get(getDeviceId(alexaInput)), request);
+                return getOutputSpeech();
             } else if (alexaInput.getRequest().getIntent().getName().equals(PREVIOUS_SLIDE)) {
-                return "{\"version\": \"1.0\",\"response\": {\"outputSpeech\": {\"type\": \"PlainText\",\"text\": \"Here is your previous slide\"},\"shouldEndSession\": true }}";
+                SlideShowRequest request = new SlideShowRequest();
+                request.setAction("previous");
+                AlexaWebSocketServer.getInstance().sendDataToClient(mapToConnectionId.get(getDeviceId(alexaInput)), request);
+                return getOutputSpeech();
             } else if (alexaInput.getRequest().getIntent().getName().equals(GO_TO_SLIDE)) {
-                return "{\"version\": \"1.0\",\"response\": {\"outputSpeech\": {\"type\": \"PlainText\",\"text\": \"Here is your go to slide\"},\"shouldEndSession\": true }}";
+                SlideShowRequest request = new SlideShowRequest();
+                request.setAction("goto");
+                request.setSlideNumber(getSlotValue(alexaInput));
+                AlexaWebSocketServer.getInstance().sendDataToClient(mapToConnectionId.get(getDeviceId(alexaInput)), request);
+                return getOutputSpeech();
+            } else if (alexaInput.getRequest().getIntent().getName().equals(SEARCH_SLIDE)) {
+                SlideShowRequest request = new SlideShowRequest();
+                request.setAction("search");
+                request.setSearchQuery(alexaInput.getRequest().getIntent().getSlots().getSearch().getValue());
+                AlexaWebSocketServer.getInstance().sendDataToClient(mapToConnectionId.get(getDeviceId(alexaInput)), request);
+                return getOutputSpeech();
+            } else if (alexaInput.getRequest().getIntent().getName().equals(MARK_SLIDE)) {
+                SlideShowRequest request = new SlideShowRequest();
+                request.setAction("mark");
+                AlexaWebSocketServer.getInstance().sendDataToClient(mapToConnectionId.get(getDeviceId(alexaInput)), request);
+                return getOutputSpeech();
+            } else if (alexaInput.getRequest().getIntent().getName().equals(MARKED_SLIDE)) {
+                SlideShowRequest request = new SlideShowRequest();
+                request.setAction("gotoMark");
+                AlexaWebSocketServer.getInstance().sendDataToClient(mapToConnectionId.get(getDeviceId(alexaInput)), request);
+                return getOutputSpeech();
+            } else if (alexaInput.getRequest().getIntent().getName().equals(STOP_INTENT)) {
+                return "{\"version\": \"1.0\",\"response\": {\"shouldEndSession\": true }}";
+            } else if (alexaInput.getRequest().getIntent().getName().equals(CANCEL_INTENT)) {
+                return "{\"version\": \"1.0\",\"response\": {\"shouldEndSession\": true }}";
+            } else if (alexaInput.getRequest().getIntent().getName().equals(HELP_INTENT)) {
+                String res = "{\"version\": \"1.0\",\"response\": {\"outputSpeech\":{\"type\": \"SSML\", \"ssml\": \"" + HELP_SSML.replace("\"", "\\\"") + "\"}, \"shouldEndSession\": true }}";
+                return res;
             }
+
         }
         return "{\"version\": \"1.0\",\"response\": {\"outputSpeech\": {\"type\": \"PlainText\",\"text\": \"Sorry I did not get that\"},\"shouldEndSession\": true }}";
+    }
+
+    private String getDeviceId(AlexaRequestModel alexaInput) {
+        return alexaInput.getContext().getSystem().getDevice().getDeviceId();
+    }
+
+    private int getSlotValue(AlexaRequestModel alexaInput) {
+        return Integer.parseInt(alexaInput.getRequest().getIntent().getSlots().getNumber().getValue());
+    }
+
+    private String getOutputSpeech() {
+        return "{\"version\": \"1.0\",\"response\": {\"outputSpeech\": {\"type\": \"PlainText\",\"text\": \"Done\"},\"shouldEndSession\": false }}";
     }
 }
