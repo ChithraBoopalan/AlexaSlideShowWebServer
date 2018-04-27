@@ -1,40 +1,60 @@
 package com.helloalexa;
 
+import com.google.gson.Gson;
 import fr.bmartel.protocol.websocket.listeners.IClientEventListener;
 import fr.bmartel.protocol.websocket.server.IWebsocketClient;
 import fr.bmartel.protocol.websocket.server.WebsocketServer;
 
+import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
 public class AlexaWebSocketServer {
-    public static void main(String[] args) {
+
+    private static AlexaWebSocketServer instance;
+    private Random rand = new Random();
+    private ConcurrentMap<Integer, IWebsocketClient> mapToClient = new ConcurrentHashMap<>();
+    private ConcurrentMap<IWebsocketClient, Integer> mapToConnectionId = new ConcurrentHashMap<>();
+    private Gson gson = new Gson();
+
+
+    public static synchronized AlexaWebSocketServer getInstance() {
+        if(instance == null){
+            instance = new AlexaWebSocketServer();
+        }
+        return instance;
+    }
+
+    public void startWebSocketServer() {
+
         WebsocketServer server = new WebsocketServer(8000);
 
         server.addServerEventListener(new IClientEventListener() {
+            public void onMessageReceivedFromClient(IWebsocketClient client, String message) {
 
-            public void onMessageReceivedFromClient(IWebsocketClient client,
-                                                    String message) {
-                //all your message received from websocket client will be here
-                System.out.println("message received : " + message);
             }
 
             public void onClientConnection(IWebsocketClient client) {
-                // when a websocket client connect. This will be called (you can store client object)
-                System.out.println("Websocket client has connected");
+                int connectionId = rand.nextInt((9999 - 1000) + 1) + 1000;
+                mapToClient.put(connectionId, client);
+                mapToConnectionId.put(client, connectionId);
 
-                client.sendMessage("Hello,I'm a websocket server");
-
-                //client.close(); // this would close the client connection
+                SlideShowRequest request = new SlideShowRequest();
+                request.setAction("connected");
+                request.setConnection(connectionId);
+                client.sendMessage(gson.toJson(request));
             }
 
             public void onClientClose(IWebsocketClient client) {
-                // when a websocket client connection close. This will be called (you can dismiss client object)
-                System.out.println("Websocket client has disconnected");
+                Integer connectionId = mapToConnectionId.remove(client);
+                mapToClient.remove(connectionId);
             }
         });
 
         server.start();
     }
 
-    public static void sendDataToClient() {
-
+    public void sendDataToClient(int connectionId, SlideShowRequest request) {
+        mapToClient.get(connectionId).sendMessage(gson.toJson(request));
     }
 }
