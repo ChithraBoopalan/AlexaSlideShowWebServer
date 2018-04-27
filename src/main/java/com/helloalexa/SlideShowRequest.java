@@ -8,6 +8,8 @@ public class SlideShowRequest {
 
     private String action;
     private int slideNumber;
+    private int connection;
+    private String searchQuery;
 
     public String getAction() {
         return action;
@@ -23,5 +25,21 @@ public class SlideShowRequest {
 
     public void setSlideNumber(int slideNumber) {
         this.slideNumber = slideNumber;
+    }
+
+    public int getConnection() {
+        return connection;
+    }
+
+    public void setConnection(int connection) {
+        this.connection = connection;
+    }
+
+    public String getSearchQuery() {
+        return searchQuery;
+    }
+
+    public void setSearchQuery(String searchQuery) {
+        this.searchQuery = searchQuery;
     }
 }
