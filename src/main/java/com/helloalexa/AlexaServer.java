@@ -1,16 +1,24 @@
 package com.helloalexa;
 
+import com.amazon.speech.speechlet.authentication.SpeechletRequestSignatureVerifier;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.time.Instant;
+import java.util.Date;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+import static java.lang.Math.abs;
+
 @RestController
 public class AlexaServer {
+    private final static long maxRequestDateToleranceMillis = 150 * 1000;
+
     private final static String LAUNCH_REQUEST = "LaunchRequest";
 
     // Built-in Intents
@@ -58,8 +66,31 @@ public class AlexaServer {
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public String processAlexaInput(InputStream input) {
-        AlexaRequestModel alexaInput = AlexaRequestParser.parseAlexaRequest(input);
+    @ResponseBody
+    public String processAlexaInput(
+            InputStream input,
+            @RequestHeader(value="Content-Length") Integer contentLength,
+            // These headers are mandatory https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-a-web-service.html#verifying-that-the-request-was-sent-by-alexa
+            @RequestHeader(value="Signature") String signature,
+            @RequestHeader(value="SignatureCertChainUrl") String signatureCertChainUrl,
+            HttpServletResponse response
+    ) {
+        byte[] alexaInputBytes = new byte[contentLength];
+        try {
+            input.read(alexaInputBytes);
+        } catch (IOException e) {
+            return "{\"error\": \"Failed to read input\"}";
+        }
+
+        // validate the signature
+        SpeechletRequestSignatureVerifier.checkRequestSignature(alexaInputBytes, signature, signatureCertChainUrl);
+
+        AlexaRequestModel alexaInput = AlexaRequestParser.parseAlexaRequest(new ByteArrayInputStream(alexaInputBytes));
+
+        Date requestDate = Date.from(Instant.parse(alexaInput.getRequest().getTimestamp()));
+        if (abs(new Date().getTime() - requestDate.getTime()) > maxRequestDateToleranceMillis) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        }
 
         if (alexaInput.getRequest().getType().equals(LAUNCH_REQUEST)) {
             return "{\"version\": \"1.0\",\"response\": {\"outputSpeech\": {\"type\": \"PlainText\",\"text\": \"Hello if you would like to start a new presentation, please say start slide and the unique code\"},\"shouldEndSession\": true }}";
