@@ -154,6 +154,6 @@ public class AlexaServer {
     }
 
     private String getOutputSpeech() {
-        return "{\"version\": \"1.0\",\"response\": {\"outputSpeech\": {\"type\": \"PlainText\",\"text\": \"Done\"},\"shouldEndSession\": false }}";
+        return "{\"version\": \"1.0\",\"response\": {\"outputSpeech\": {\"type\": \"SSML\",\"ssml\": \"<speak><audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_electronic_beep_01.mp3'/></speak>\"},\"shouldEndSession\": true }}";
     }
 }
