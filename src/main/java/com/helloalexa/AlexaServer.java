@@ -37,27 +37,26 @@ public class AlexaServer {
     private static final String HELP_SSML =
             "<speak>" +
             "    <p>" +
-            "        Welcome to Slide Show! This skill will help you control your reveal dot <say-as interpret-as=\"spell-out\">JS</say-as> slideshows with voice commands." +
+            "        Welcome to Slide Show! I'll help you control your reveal dot <say-as interpret-as=\"spell-out\">JS</say-as> slideshows with just your voice." +
             "    </p>" +
             "    <p>" +
-            "        To use this skill, first install the Alexa Slide Show extension on Google Chrome. Then open a reveal dot <say-as interpret-as=\"spell-out\">JS</say-as> slideshow in the browser and click on the extension's icon. You'll then be shown instructions to connect your slideshow to your Alexa device." +
+            "        Before using this skill, please install the Alexa Slide Show extension on Google Chrome and open a reveal dot <say-as interpret-as=\"spell-out\">JS</say-as> slideshow in the browser. Then click on the extension's icon to see instructions to connect your slideshow to your Alexa device." +
             "    </p>" +
             "    <p>" +
             "        <s>" +
             "            Once connected, you can use voice commands such as" +
-            "            <break strength=\"medium\" />next slide<break strength=\"medium\"/> and" +
-            "            <break strength=\"medium\" />previous slide<break strength=\"medium\"/> to go to the next and previous slides." +
-            "        </s>" +
+            "            <break strength=\"medium\" />next slide<break strength=\"medium\"/>" +
+            "            <break strength=\"medium\" />previous slide<break strength=\"medium\"/> and" +
+            "            <break strength=\"medium\" />go to slide five<break strength=\"medium\"/>.</s>" +
             "" +
-            "        <s>To open a slide by slide number, use phrases such as <break strength=\"medium\" />go to slide five<break strength=\"medium\"/>.</s>" +
-            "" +
-            "        <s>It's easy to mark a slide to come back to later.</s>" +
-            "        <s>Say <break strength=\"medium\" />mark current slide<break strength=\"medium\"/> to mark a slide, and later say <break strength=\"medium\" />marked slide<break strength=\"medium\"/> to go to the marked slide.</s>" +
+            "        <s>Additionally, you can say <break strength=\"medium\" />mark current slide<break strength=\"medium\"/> to mark a slide and later saying <break strength=\"medium\" />marked slide<break strength=\"medium\"/> will go back to that slide.</s>" +
             "" +
             "        <s>You can also go to a slide by a search string.</s><s>For example, say <break strength=\"medium\" />search planet earth<break strength=\"medium\"/> to go to the slide containing the phrase \"planet earth\".</s>" +
             "    </p>" +
             "" +
-            "    Hope you enjoy this skill!" +
+            "    Easy, isn't it?" +
+            "    <break strength=\"medium\"/>" +
+            "    Let's begin! What would you like me to do?" +
             "</speak>";
 
     private ConcurrentMap<String, Integer> mapToConnectionId = new ConcurrentHashMap<>();
@@ -138,7 +137,7 @@ public class AlexaServer {
             } else if (alexaInput.getRequest().getIntent().getName().equals(CANCEL_INTENT)) {
                 return "{\"version\": \"1.0\",\"response\": {\"shouldEndSession\": true }}";
             } else if (alexaInput.getRequest().getIntent().getName().equals(HELP_INTENT)) {
-                String res = "{\"version\": \"1.0\",\"response\": {\"outputSpeech\":{\"type\": \"SSML\", \"ssml\": \"" + HELP_SSML.replace("\"", "\\\"") + "\"}, \"shouldEndSession\": true }}";
+                String res = "{\"version\": \"1.0\",\"response\": {\"outputSpeech\":{\"type\": \"SSML\", \"ssml\": \"" + HELP_SSML.replace("\"", "\\\"") + "\"}, \"shouldEndSession\": false }}";
                 return res;
             }
 
